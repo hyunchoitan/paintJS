@@ -22,6 +22,68 @@ body {
 
 .controls {
   margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls .controls__range {
+  margin-bottom: 30px;
+}
+
+.controls input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #dfe6e9;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  box-shadow: inset 3px 3px 4px #acaeb0, inset -3px -3px 4px #ffffff;
+}
+
+.controls input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #a0a2a4;
+  cursor: pointer;
+}
+
+.controls input::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #a0a2a4;
+  cursor: pointer;
+}
+
+.controls .controls__btns {
+  margin-bottom: 30px;
+}
+
+.controls__btns button {
+  all: unset;
+  cursor: pointer;
+  background-color: #f6f9fc;
+  padding: 8px 0px;
+  width: 80px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 8px 8px 8px #d6d9db, -8px -8px 8px #ffffff;
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.controls__btns button:active {
+  transform: scale(0.95);
 }
 
 .controls .controls__colors {
@@ -35,5 +97,5 @@ body {
   cursor: pointer;
   border-radius: 25px;
   background: #f6f9fc;
-  box-shadow: 8px 8px 8px #d6d9db, -8px -8px 8px #ffffff;
+  box-shadow: 6px 6px 7px #c0c2c5, -6px -6px 7px #ffffff;
 }
