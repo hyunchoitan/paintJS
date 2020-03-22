@@ -1,44 +1,62 @@
 const canvas = document.getElementById("jsCanvas");
-// (1)
+const ctx = canvas.getContext("2d");
+// (12) canvas란 context를 갖는 html 요소. context는 픽셀에 접근할 수 있는 방법. 위와같이 context를 만든다.
+
+canvas.width = 700;
+canvas.height = 700;
+// (14) css와 별개로 x,y의 좌표를 확정시켜주려면 JS에서 좌표를 인지한 canvas의 기준 사이즈를 설정해주어야 함.
+// 즉 pixel modifier의 사이즈를 설정해주어야 함. 윈도우에게 픽셀을 사용할 수 있는 공간의 크기를 알려주는 것.
+
+ctx.strokeStyle = "#2c2c2c";
+ctx.lineWidth = 2.5;
+//(13)
 
 let painting = false;
-// (6) 기본적으로 painting을 false로 설정해두고
-
-function onMouseMove(event) {
-  //   console.log(event); console창을 켜고 mouseevent가 발동하는지 확인!
-  //   mouseevent를 클릭해서 offset property를 찾아봄.
-  const x = event.offsetX; //offset좌표는 canvas안의 좌표. window좌표를 나타내는 client좌표와 다르다.
-  const y = event.offsetY;
-  //   console.log(x, y); console창을 켜고 mousevent의 대상이 canvas안의 좌표로 한정되었는지 확인!
-}
-// (3)
 
 function stopPainting() {
   painting = false;
 }
-// (11)
 
-function onMouseDown(event) {
-  //   console.log(event); (5)
+function startPainting() {
   painting = true;
-  //   (7) 캔버스위에서 마우스를 클릭할 때, paining을 true로 전환시킴.
 }
 
-function onMouseUp(event) {
-  //   painting = false; 이 구문이 아래의 함수에서도 반복되므로 따로 함수로 빼서 중복을 제거!
-  //  (9) painting이 끝난 후 다시 마우스클릭을 떼었을 때 painting을 기본값인 false로 돌아감.
-  stopPainting();
+function onMouseMove(event) {
+  const x = event.offsetX;
+  const y = event.offsetY;
+  if (!painting) {
+    ctx.beginPath();
+    //  여기서 path는 선이 아니라 선분으로 연결된 점의 목록! 즉 표현(rendering)이 아닌 수치와 방정식의 개념.
+    // path는 create-use drawing commands to draw into the path-rendering by stroke(획을 긋다)/fill의 단계로 진행
+    //  beginPath는 새로운 path를 만드는 함수.
+    // 추후에 drawing command들은 이 path로 바로 보내진다. 그리고 이 path를 확립한다.
+    ctx.moveTo(x, y);
+    // 이 역시 실제로 그리는 함수는 아니고, path의 한 지점에서 펜을 떼고 다른 한 지점으로 path의 시작점을 옮기는 함수.
+  }
+  //위의 두개의 함수는 painting을 하고 있지 않을 때 이므로, 그리고 있는 동안
+  // (즉 클릭 후 그리기 시작해서 끝내고 언클릭할때까지)에는 적용되지 않는다.
+  else {
+    ctx.lineTo(x, y);
+    // path의 한 지점에서 설정한 지점까지 선을 그리는 기능. 즉 마우스를 옮길 때마다! 선으로 지정된다.
+    ctx.stroke();
+    // 그려진 선을 따라 획을 긋는 기능. 즉 이 때서야 비로소 시각적으로 선이 그려진다.
+  }
 }
 
-// function onMouseLeave(event) {
-//  painting = false;
-// } 이 함수의 기능은 painting = false;밖에 없으므로 전체를 stopPainting함수로 대체!
+// function onMouseDown(event) {
+//   startPainting();
+// }
+
+// function onMouseUp(event) {
+//   stopPainting();
+// }
 
 if (canvas) {
-  canvas.addEventListener("mousemove", onMouseMove); // (2)
-  canvas.addEventListener("mousedown", onMouseDown); //(4)
-  canvas.addEventListener("mouseup", onMouseUp); //(8) stopPainting함수로 대체하지 않는 이유는 후에 이 함수에는 코드를 추가해야 하므로.
-  canvas.addEventListener("mouseleave", stopPainting); //onMouseLeave); //(10)
+  canvas.addEventListener("mousemove", onMouseMove);
+  canvas.addEventListener("mousedown", startPainting); //onMouseDown 대신에 startPainting으로 넣어줌.
+  canvas.addEventListener("mouseup", stopPainting); //onMouseUp 대신에 stopPainting으로 바로 넣어주기로 함.
+  // 이에 해당하는 logic은 onMouseMove에 넣어주는 걸로 정리!
+  canvas.addEventListener("mouseleave", stopPainting);
 }
 
 function init() {}

@@ -43,24 +43,6 @@ body {
   box-shadow: inset 3px 3px 4px #acaeb0, inset -3px -3px 4px #ffffff;
 }
 
-/* .controls input::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #a0a2a4;
-  cursor: pointer;
-}
-
-.controls input::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #a0a2a4;
-  cursor: pointer;
-} */
-
 .controls .controls__btns {
   margin-bottom: 30px;
 }
