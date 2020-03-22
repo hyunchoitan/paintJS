@@ -39,12 +39,11 @@ body {
   background: #dfe6e9;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   box-shadow: inset 3px 3px 4px #acaeb0, inset -3px -3px 4px #ffffff;
 }
 
-.controls input::-webkit-slider-thumb {
+/* .controls input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 15px;
@@ -60,7 +59,7 @@ body {
   border-radius: 50%;
   background: #a0a2a4;
   cursor: pointer;
-}
+} */
 
 .controls .controls__btns {
   margin-bottom: 30px;
