@@ -67,6 +67,10 @@ body {
   transform: scale(0.95);
 }
 
+.controls__btns button:hover {
+  box-shadow: inset 5px 5px 4px #cfd1d4, inset -5px -5px 4px #ffffff;
+}
+
 .controls .controls__colors {
   display: flex;
 }
@@ -79,4 +83,43 @@ body {
   border-radius: 25px;
   background: #f6f9fc;
   box-shadow: 6px 6px 7px #c0c2c5, -6px -6px 7px #ffffff;
+}
+
+.controls__color:first-child:hover {
+  box-shadow: inset 6px 6px 9px #121212, inset -6px -6px 9px #464646;
+}
+
+.controls__color:nth-child(2):hover {
+  box-shadow: inset 6px 6px 8px #91260a, inset -6px -6px 8px #ff5416;
+}
+
+.controls__color:nth-child(3):hover {
+  box-shadow: inset 6px 6px 8px #356d4c, inset -6px -6px 8px #75f2a8;
+}
+
+.controls__color:nth-child(4):hover {
+  box-shadow: inset 6px 6px 8px #1c396c, inset -6px -6px 8px #3875da;
+}
+
+.controls__color:nth-child(5):hover {
+  box-shadow: inset 6px 6px 6px #b2a045, inset -6px -6px 6px #ffff71;
+}
+
+.controls__color:nth-child(6):hover {
+  box-shadow: inset 6px 6px 8px #791d1a, inset -6px -6px 8px #ff433a;
+}
+
+.controls__color:nth-child(7):hover {
+  box-shadow: inset 6px 6px 6px #8da026, inset -6px -6px 6px #e7ff3e;
+}
+
+.controls__color:nth-child(8):hover {
+  box-shadow: inset 6px 6px 6px #b08690, inset -6px -6px 6px #ffdaea;
+}
+.controls__color:nth-child(9):hover {
+  box-shadow: inset 6px 6px 8px #b6afa8, inset -6px -6px 8px #fffffc;
+}
+
+.controls__color:nth-child(10):hover {
+  box-shadow: inset 6px 6px 8px #8d918a, inset -6px -6px 8px #d3d9ce;
 }
