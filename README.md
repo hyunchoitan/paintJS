@@ -11,13 +11,6 @@ painting board made with **Vanilla JS**
 ![Demo Image](./demo-paintJS.png)
 ![Demo Image](./demo-paintJS(2).png)
 
-## Technologies
-
-This project is created with 
-* <img src = "https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white"> 
-* <img src = "https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white">
-* <img src="https://img.shields.io/badge/-JavaScript-eed718?style=flat&logo=javascript&logoColor=ffffff">
-
 ## Features
 
 * Canvas
@@ -27,6 +20,14 @@ This project is created with
 * Changing brush size
 * Save final image
 * Neumorphism UI
+
+## Technologies
+
+This project is created with 
+* <img src = "https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white"> 
+* <img src = "https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white">
+* <img src="https://img.shields.io/badge/-JavaScript-eed718?style=flat&logo=javascript&logoColor=ffffff">
+
 
 ## The Project Status
 
